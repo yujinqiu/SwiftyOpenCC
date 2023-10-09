@@ -45,8 +45,8 @@ let package = Package(
                 "src/UTF8StringSliceTest.cpp",
                 "src/UTF8UtilTest.cpp",
                 "deps/google-benchmark",
-                "deps/gtest-1.11.0",
-                "deps/pybind11-2.5.0",
+                "deps/gtest-1.12.1",
+                "deps/pybind11-2.10.0",
                 "deps/rapidjson-1.1.0",
                 "deps/tclap-1.2.2",
                 
@@ -59,6 +59,7 @@ let package = Package(
                 "src/TestUtilsUTF8.hpp",
                 "src/TextDictTestBase.hpp",
                 "src/py_opencc.cpp",
+                "src/opencc_config.h.in",
                 
                 // ???
                 "src/README.md",
@@ -75,10 +76,11 @@ let package = Package(
             ],
             cxxSettings: [
                 .headerSearchPath("src"),
+                .headerSearchPath("configure"),
                 .headerSearchPath("deps/darts-clone"),
                 .headerSearchPath("deps/marisa-0.2.6/include"),
                 .headerSearchPath("deps/marisa-0.2.6/lib"),
-                .define("ENABLE_DARTS"),
+                .define("OPENCC_ENABLE_DARTS"),
             ]),
     ],
     cxxLanguageStandard: .cxx14
